@@ -1,10 +1,6 @@
 <h3>Apache Ranger</h3>
 
 <br>
-<br><b>AD/LDAP Integration</b>
-<br>Ranger UserSync: ```ranger-usersync start```
-<br>
-<br>
 <br><b>References:</b>
 <br><a href="http://ranger.apache.org/">Apache Ranger</a>
 <br><a href="http://hortonworks.com/apache/ranger/">Hortonworks - Apache Ranger</a>
