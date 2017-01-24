@@ -1,6 +1,13 @@
 
-import re
+
+import sys,re
 import requests
+
+
+ranger_host = raw_input("\nEnter Ranger host: ")
+ranger_port = raw_input("\nEnter Ranger port: ")
+ranger_user = raw_input("\nEnter Ranger user: ")
+ranger_pw   = raw_input("\nEnter Ranger pw: ")
 
 
 def ranger_get_groups(ranger_host='localhost', ranger_port=6080, ranger_user='admin', ranger_pw='admin'):
@@ -37,7 +44,7 @@ def ranger_delete_group(group, ranger_host='localhost', ranger_port=6080, ranger
 #
 ####################################################################################
 
-status_code, groups = ranger_get_groups('localhost', 6080, 'admin', 'admin')
+status_code, groups = ranger_get_groups(ranger_host, ranger_port, ranger_user, ranger_pw)
 
 for group in groups:
     
@@ -47,7 +54,7 @@ for group in groups:
     
     if group.lower() not in do_not_delete_these_groups:
         raw_input('\nPress Enter to DELETE group: ' + str(group))
-        ranger_delete_group(str(group), ranger_host='localhost', ranger_port=6080, ranger_user='admin', ranger_pw='admin')
+        ranger_delete_group(str(group), ranger_host, ranger_port, ranger_user, ranger_pw)
 
 
 #ZEND
