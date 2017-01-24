@@ -50,7 +50,7 @@ for username in usernames:
     
     if username.lower() not in do_not_delete_these_users:
         raw_input('\nPress Enter to DELETE user: ' + str(username))
-        ranger_delete_user('tiki3', ranger_host='localhost', ranger_port=6080, ranger_user='admin', ranger_pw='admin')
+        ranger_delete_user(str(username), ranger_host='localhost', ranger_port=6080, ranger_user='admin', ranger_pw='admin')
 
 
 #ZEND
