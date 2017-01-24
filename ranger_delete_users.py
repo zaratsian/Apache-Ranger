@@ -1,6 +1,12 @@
 
-import re
+import sys, re
 import requests
+
+
+ranger_host = raw_input("\nEnter Ranger host: ")
+ranger_port = raw_input("\nEnter Ranger port: ")
+ranger_user = raw_input("\nEnter Ranger user: ")
+ranger_pw   = raw_input("\nEnter Ranger pw: ")
 
 
 def ranger_get_users(ranger_host='localhost', ranger_port=6080, ranger_user='admin', ranger_pw='admin'):
@@ -37,7 +43,7 @@ def ranger_delete_user(username, ranger_host='localhost', ranger_port=6080, rang
 #
 ####################################################################################
 
-status_code, usernames = ranger_get_users('localhost', 6080, 'admin', 'admin')
+status_code, usernames = ranger_get_users(ranger_host, ranger_port, ranger_user, ranger_pw)
 
 for username in usernames:
     
@@ -50,7 +56,7 @@ for username in usernames:
     
     if username.lower() not in do_not_delete_these_users:
         raw_input('\nPress Enter to DELETE user: ' + str(username))
-        ranger_delete_user(str(username), ranger_host='localhost', ranger_port=6080, ranger_user='admin', ranger_pw='admin')
+        ranger_delete_user(str(username), ranger_host, ranger_port, ranger_user, ranger_pw)
 
 
 #ZEND
