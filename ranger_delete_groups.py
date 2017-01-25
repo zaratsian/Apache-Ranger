@@ -15,7 +15,7 @@ def ranger_get_groups(ranger_host='localhost', ranger_port=6080, ranger_user='ad
     Queries Ranger to get a list of groups
     http://localhost:6080/service/xusers/groups?page=0&pageSize=25&startIndex=0&_=1485222679700
     '''
-    url = 'http://' + str(ranger_host) + ':' + str(ranger_port) + '/service/xusers/groups'
+    url = 'http://' + str(ranger_host) + ':' + str(ranger_port) + '/service/xusers/groups?page=0&pageSize=5000&startIndex=0'
     r = requests.get(url, auth=(ranger_user,ranger_pw))
     
     if r.status_code == 200:
