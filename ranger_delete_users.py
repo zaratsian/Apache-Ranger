@@ -14,7 +14,7 @@ def ranger_get_users(ranger_host='localhost', ranger_port=6080, ranger_user='adm
     Queries Ranger to get a list of user names
     http://localhost:6080/service/xusers/users?page=0&pageSize=25&total_pages=3&totalCount=52&sortBy=id&sortType=asc&startIndex=0&userRoleList%5B%5D=ROLE_SYS_ADMIN&userRoleList%5B%5D=ROLE_USER&_=1485219402896
     '''
-    url = 'http://' + str(ranger_host) + ':' + str(ranger_port) + '/service/xusers/users'
+    url = 'http://' + str(ranger_host) + ':' + str(ranger_port) + '/service/xusers/users?page=0&pageSize=5000&startIndex=0'
     r = requests.get(url, auth=(ranger_user,ranger_pw))
     
     if r.status_code == 200:
