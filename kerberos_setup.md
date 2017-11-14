@@ -162,6 +162,6 @@ client package and add some host principals:
 ```
 [root@client ~]# yum install krb5-workstation
 [root@client ~]# kadmin -p root/admin
-kadmin:  addpinc --randkey host/client.example.com
+kadmin:  addprinc -randkey host/client.example.com
 kadmin:  ktadd host/kdc.example.com
 ```
