@@ -1,5 +1,5 @@
 # Installing Kerberos on Redhat 7
-# Credit to ashrithr: https://gist.github.com/ashrithr/4767927948eca70845db
+### Credit to ashrithr: https://gist.github.com/ashrithr/4767927948eca70845db
 
 This installation is going to require 2 servers one acts as kerberos KDC server
 and the other machine is going to be client. Lets assume the FQDN's are (here
